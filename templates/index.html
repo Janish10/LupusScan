@@ -1,0 +1,133 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="row align-items-center mb-5">
+    <div class="col-md-6">
+        <h1 class="display-4 fw-bold mb-4">Comprehensive Security Scanning</h1>
+        <p class="lead mb-4">Protect your digital assets with our advanced security scanning tools powered by VirusTotal and AbuseIPDB APIs.</p>
+        <div class="d-grid gap-2 d-md-flex">
+            <a href="{{ url_for('url_scan') }}" class="btn btn-primary btn-lg px-4 me-md-2">
+                <i class="fas fa-link me-2"></i> Scan URL
+            </a>
+            <a href="{{ url_for('ip_scan') }}" class="btn btn-secondary btn-lg px-4">
+                <i class="fas fa-network-wired me-2"></i> Scan IP
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6 mt-5 mt-md-0 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <circle cx="12" cy="11" r="3"></circle>
+            <path d="M12 8v6"></path>
+            <path d="M9 11h6"></path>
+        </svg>
+    </div>
+</div>
+
+<hr class="mb-5">
+
+<div class="row g-4 mb-5">
+    <div class="col-md-4">
+        <div class="card h-100 result-card border-0 bg-dark">
+            <div class="card-body text-center p-4">
+                <div class="mb-3">
+                    <i class="fas fa-link fa-3x text-primary"></i>
+                </div>
+                <h3 class="card-title">URL Scanner</h3>
+                <p class="card-text">Check website URLs for potential security threats, phishing attempts, malware distribution, or suspicious behavior.</p>
+                <a href="{{ url_for('url_scan') }}" class="btn btn-outline-primary">Try URL Scanner</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 result-card border-0 bg-dark">
+            <div class="card-body text-center p-4">
+                <div class="mb-3">
+                    <i class="fas fa-network-wired fa-3x text-info"></i>
+                </div>
+                <h3 class="card-title">IP Scanner</h3>
+                <p class="card-text">Evaluate IP addresses for reputation, location data, abuse history, and potential malicious activity.</p>
+                <a href="{{ url_for('ip_scan') }}" class="btn btn-outline-info">Try IP Scanner</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 result-card border-0 bg-dark">
+            <div class="card-body text-center p-4">
+                <div class="mb-3">
+                    <i class="fas fa-file-alt fa-3x text-success"></i>
+                </div>
+                <h3 class="card-title">File Scanner</h3>
+                <p class="card-text">Analyze files for potential viruses, malware, trojans, and other malicious software using VirusTotal's engine.</p>
+                <a href="{{ url_for('file_scan') }}" class="btn btn-outline-success">Try File Scanner</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row my-5">
+    <div class="col-12">
+        <div class="card border-0 bg-dark">
+            <div class="card-body p-4">
+                <h2 class="card-title text-center mb-4">Why Choose LupusScan?</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="d-flex align-items-start">
+                            <div class="me-3">
+                                <i class="fas fa-shield-alt text-primary fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Multiple Security APIs</h5>
+                                <p class="text-muted">Integrated with both VirusTotal and AbuseIPDB for comprehensive scanning.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="d-flex align-items-start">
+                            <div class="me-3">
+                                <i class="fas fa-chart-line text-info fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Detailed Analysis</h5>
+                                <p class="text-muted">Get in-depth reports with reputation scores and detection details.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="d-flex align-items-start">
+                            <div class="me-3">
+                                <i class="fas fa-tachometer-alt text-success fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Fast Results</h5>
+                                <p class="text-muted">Quick scanning and immediate reporting for efficient threat detection.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="d-flex align-items-start">
+                            <div class="me-3">
+                                <i class="fas fa-lock text-warning fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Secure Processing</h5>
+                                <p class="text-muted">All scanning is done securely with proper handling of sensitive data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12 text-center">
+        <h2 class="mb-4">Ready to enhance your security?</h2>
+        <p class="lead mb-4">Start scanning URLs, IP addresses, and files to detect potential threats.</p>
+        <a href="{{ url_for('url_scan') }}" class="btn btn-primary btn-lg">Get Started Now</a>
+    </div>
+</div>
+{% endblock %}
